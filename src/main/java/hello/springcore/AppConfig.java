@@ -2,6 +2,7 @@ package hello.springcore;
 
 import hello.springcore.discount.DiscountPolicy;
 import hello.springcore.discount.FixDiscountPolicy;
+import hello.springcore.discount.RateDiscountPolicy;
 import hello.springcore.member.MemberRepository;
 import hello.springcore.member.MemberService;
 import hello.springcore.member.MemberServiceImpl;
@@ -28,7 +29,9 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        // 할인정책을 변경하려면 AppConfig 여기만 변경하면 된다.
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 }
