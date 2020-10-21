@@ -21,16 +21,22 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
+        // 주석 풀고 ConfigurationSingletonTest.configurationTest 실행해서 확인해보자
+//        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        // 주석 풀고 ConfigurationSingletonTest.configurationTest 실행해서 확인해보자
+//        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        // 주석 풀고 ConfigurationSingletonTest.configurationTest 실행해서 확인해보자
+//        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
