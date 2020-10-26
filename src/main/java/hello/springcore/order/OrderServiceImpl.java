@@ -1,5 +1,6 @@
 package hello.springcore.order;
 
+import hello.springcore.annotation.MainDiscountPolicy;
 import hello.springcore.discount.DiscountPolicy;
 import hello.springcore.member.Member;
 import hello.springcore.member.MemberRepository;
@@ -33,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
 
 //    생성자 주입 방식 - Lombok 으로 인해 삭제
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
